@@ -13,7 +13,7 @@ export default function Task({onComplete,handleDelete,handleEdit, todo}){
            { isEditing ? 
                 <>
                     <input type="text" value={todo.name} name="editText"
-                     onChange={(e)=> dispatch({type:'edit', task:todo})}
+                     onChange={(e)=> dispatch({type:'edit', task:{...todo, name: e.target.value}})}
                      />
                     <button onClick={()=>setIsEditing(false)}>Save</button>
                 </> : <>
